@@ -1,0 +1,28 @@
+<div class="book-upload">
+    <h2>Загрузка книги</h2>
+    <form (ngSubmit)="uploadBook()">
+        <mat-form-field class="w-100">
+            <mat-label>Title</mat-label>
+            <input matInput [(ngModel)]="bookData.title" name="title" required />
+        </mat-form-field>
+        <mat-form-field class="w-100">
+            <mat-label>Author</mat-label>
+            <input matInput [(ngModel)]="bookData.author" name="author" required />
+        </mat-form-field>
+        <mat-form-field class="w-100">
+            <mat-label>Description</mat-label>
+            <textarea matInput [(ngModel)]="bookData.description" name="description"></textarea>
+        </mat-form-field>
+        <mat-form-field class="w-100">
+            <mat-label>Cover Image url</mat-label>
+            <input matInput [(ngModel)]="bookData.coverImage" name="coverImage" />
+        </mat-form-field>
+        <mat-form-field class="w-100">
+            <mat-label>Categories by comma</mat-label>
+            <input matInput [(ngModel)]="bookData.categories" name="categories" />
+        </mat-form-field>
+        <input type="file" (change)="onFileSelected($event)" />
+        <button mat-raised-button color="primary" type="submit">Загрузить</button>
+    </form>
+</div>
+  

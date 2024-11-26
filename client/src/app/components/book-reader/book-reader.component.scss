@@ -1,0 +1,42 @@
+.book-reader {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+  
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .book-content {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        white-space: pre-wrap;
+    }
+
+    pre {
+        white-space: break-spaces;
+    }
+
+    .pagination-controls {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .reader-acts {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
+.light {
+    background: #f9f9f9;
+}
+
+.dark {
+    background: #333;
+    color: #fff;
+}

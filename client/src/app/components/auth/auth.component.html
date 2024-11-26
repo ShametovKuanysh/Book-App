@@ -1,0 +1,29 @@
+<div class="auth">
+    <h3>{{isLoginMode ? 'Login' : 'Register'}}</h3>
+    <form (ngSubmit)="onSubmit(authForm)" #authForm="ngForm">
+        <mat-form-field class="w-100">
+            <mat-label>Username</mat-label>
+            <input id="username" matInput placeholder="Enter username" ngModel name="username" type="text" [required]="true">
+        </mat-form-field>
+        <mat-form-field class="w-100" *ngIf="!isLoginMode">
+            <mat-label>Email</mat-label>
+            <input id="email" matInput placeholder="Enter email" ngModel name="email" type="email" [required]="true">
+        </mat-form-field>
+        <mat-form-field class="w-100">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Enter Password" ngModel name="password" type="password" autocomplete="on" [required]="true">
+        </mat-form-field>
+        @if (error) {
+            <mat-error>{{error}}</mat-error>
+        }
+
+        <div class="btn-center">
+            <button mat-raised-button color="primary" type="submit" [disabled]="authForm.invalid">{{ isLoginMode ? 'Login' : 'Register'}}</button>
+
+            <button mat-raised-button color="secondary" type="button" (click)="onSwitchMode()">
+                {{ isLoginMode ? 'No account? Register' : 'Already has account? Login' }}
+            </button>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,20 @@
+<div class="back">
+    <div class="nav">
+        <div class="nav-m">
+            <ng-container *ngIf="isAuthenticated">
+                <a routerLink="/books">Books</a>
+                <a routerLink="/bookmarks">Bookmarks</a>
+                <a routerLink="/admin/upload">Upload</a>
+            </ng-container>
+        </div>
+        <div class="nav-m">
+            <button mat-icon-button color="secondary" (click)="toggleMode()">
+                <mat-icon class="primary" *ngIf="readMode == 'dark'">light_mode</mat-icon>
+                <mat-icon class="primary" *ngIf="readMode == 'light'">dark_mode</mat-icon>
+            </button>
+            <a *ngIf="!isAuthenticated" routerLink="/auth">Login/Register</a>
+            <a *ngIf="isAuthenticated" routerLink="/profile">Profile</a>
+            <a *ngIf="isAuthenticated" (click)="logout()">Log Out</a>
+        </div>
+    </div>
+</div>

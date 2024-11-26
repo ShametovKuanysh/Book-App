@@ -1,0 +1,12 @@
+<div *ngIf="book" class="book-detail">
+    <img [src]="book.coverImage" alt="Cover Image">
+    <h2>{{ book.title }}</h2>
+    <p><strong>Author:</strong> {{ book.author }}</p>
+    <p><strong>Description:</strong> {{ book.description }}</p>
+    <button mat-button color="primary" [routerLink]="'/books/' + book.id + '/read'">
+        Read
+    </button>
+    <button mat-raised-button color="primary" (click)="addBookmark()">
+        <mat-icon>bookmark</mat-icon> Add bookmark
+    </button>
+</div>

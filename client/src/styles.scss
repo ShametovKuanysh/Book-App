@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.w-100 {
+    width: 100%;
+}
+
+:root {
+    --light-back: #ffffff;
+    --light-text: #000000;
+    
+    --dark-back: #222;
+    --dark-text: #ffffff;
+}
+
+html[theme='dark'] {
+    background-color: var(--dark-back);
+    color: var(--dark-text);
+
+    .mat-mdc-form-field {
+        background-color: var(--dark-back);
+        color: var(--dark-text);
+    }
+
+    .book-card {
+        background-color: var(--dark-back);
+        color: var(--dark-text);
+    }
+
+    .mat-mdc-card-subtitle {
+        color: var(--dark-text);
+    }
+
+    .mat-mdc-card-actions > button {
+        color: var(--dark-text);
+    }
+
+    .mat-mdc-table {
+        background-color: var(--dark-back);
+        color: var(--dark-text);
+
+        .mat-mdc-header-row, .mat-mdc-row {
+            color: var(--dark-text)
+        }
+
+
+    }
+}

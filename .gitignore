@@ -1,0 +1,8 @@
+# Исключаем сборку Angular
+client/dist/
+
+# Исключаем зависимости Node.js
+node_modules/
+
+# Исключаем окружение сервера
+backend/.env

@@ -1,0 +1,26 @@
+<div class="profile" *ngIf="user">
+    <h3>Hello, {{user.username}}</h3>
+    <p>Email: {{user.email}}</p>
+    <div class="profile-acts">
+        <button mat-button color="primary" (click)="editProfile()">Edit Profile</button>
+        <button mat-button color="warn" (click)="deleteProfile()">Delete Account</button>
+        <button mat-button (click)="logout()">Logout</button>
+    </div>
+
+    <div *ngIf="showForm" class="profile-form">
+        <form (ngSubmit)="onSubmit()" [formGroup]="profileForm">
+            <mat-form-field class="w-100">
+                <mat-label>Username</mat-label>
+                <input matInput formControlName="username" name="username" required>
+            </mat-form-field>
+            <mat-form-field class="w-100">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" name="email" required>
+            </mat-form-field>
+            <div class="profile-acts">
+                <button mat-raised-button color="primary" [disabled]="!profileForm.valid" type="submit">Update</button>
+                <button mat-raised-button color="secondary" type="button" (click)="showForm = false">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

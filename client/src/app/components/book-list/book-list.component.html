@@ -1,0 +1,29 @@
+<div>
+    <mat-form-field class="w-100">
+        <mat-label>Search by Name or Author</mat-label>
+        <input matInput type="text" [(ngModel)]="search_text" (input)="loadBooks()">
+        @if (search_text) {
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="search_text=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        }
+    </mat-form-field>
+
+    <div class="book-list-container">
+        <mat-card  *ngFor="let book of books" class="book-card" appearance="outlined">
+            <mat-card-header>
+                <mat-card-title>{{ book.title }}</mat-card-title>
+                <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>
+                    {{ book.description }}
+                </p>
+            </mat-card-content>
+            <mat-card-actions class="flex">
+                <button mat-button (click)="viewDetails(book.id)">VIEW</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

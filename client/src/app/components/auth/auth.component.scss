@@ -1,0 +1,23 @@
+.w-100 {
+    width: 100%;
+}
+
+.auth {
+    width: 60%;
+    margin: 0 auto;
+
+    h3 {
+        text-align: center;
+        margin: 1.5rem 0;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .btn-center {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5rem;
+        gap: 1rem;
+    }
+}

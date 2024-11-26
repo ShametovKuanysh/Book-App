@@ -1,0 +1,21 @@
+<div *ngIf="book" class="book-reader">
+    <h1>{{ book.title }}</h1>
+    <p><strong>Author:</strong> {{ book.author }}</p>
+    <div class="reader-acts">
+      <div class="pagination-controls">
+        <button mat-raised-button color="primary" (click)="prevPage()" [disabled]="currentPage === 1">
+          Back
+        </button>
+        <span>Page {{ currentPage }}/{{ totalPages }}</span>
+        <button mat-raised-button color="primary" (click)="addBookmark()">
+          <mat-icon>bookmark</mat-icon> Add bookmark
+        </button>
+        <button mat-raised-button color="primary" (click)="nextPage()" [disabled]="currentPage === totalPages">
+          Forward
+        </button>
+      </div>
+    </div>
+    <div class="book-content">
+        <pre>{{ bookText }}</pre>
+    </div>
+</div>
